@@ -1,5 +1,5 @@
 #include <iostream>
-#include <sys/mman.h>
+#include "sys/mman.h"
 
 struct block{
     size_t size;
@@ -8,20 +8,20 @@ struct block{
 };
 
 /*
-mmap(
-    void *address,
-    
-    size_t length/size,
-    
-    int prot, = access permisssions, read/write etc
-    
-    int flags, = map_shared (changes shared with other processes)
-    map_private (creates a private copy on write mapping)
-    map_anonomus (mapping is not backed by any file, the fd argument should be -1)
-    
-    int fd, = file descriptor
-    off_t offset = starting point in the file from which the mapping begins
-    
+    mmap(
+        void *address,
+        
+        size_t length/size,
+        
+        int prot, = access permisssions, read/write etc
+        
+        int flags, = map_shared (changes shared with other processes)
+        map_private (creates a private copy on write mapping)
+        map_anonomus (mapping is not backed by any file, the fd argument should be -1)
+        
+        int fd, = file descriptor
+        off_t offset = starting point in the file from which the mapping begins
+        
     )
 */
 
